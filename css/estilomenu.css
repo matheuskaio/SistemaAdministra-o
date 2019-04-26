@@ -1,0 +1,57 @@
+.menuficadento{
+    position: absolute;
+    width: 200px;
+    height: 928px;
+    left: 0px;
+    top: 96px;
+    background: #A80003;
+}
+.navegacao {
+    position: relative;
+    width: 200px;
+    height: 400px;
+    top: 180px;
+}
+.menu, .submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.menu a, span{
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 15px;
+  line-height: normal;
+  color: #fff;
+  text-align:  justify;
+}
+
+.b1{
+    background-color:#820002;
+}
+.b2{
+    background-color: #5C0002;
+}
+.menu a:hover {
+    background-color: #A80003;
+}
+
+.menu li:hover .submenu {
+  display: block;
+  max-height: 200px;
+}
+.submenu a{
+  background-color: rgba(232, 0, 4, 0.75);
+}
+.submenu a:hover {
+  background-color: #9B0003;
+}
+.submenu {
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: all 0.9s ease-out;
+}

@@ -1,0 +1,31 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: Roboto, sans-serif;
+    background: #fafafa;
+}
+
+#cabecalho {
+    width: auto;
+    height: 96px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    background-color: #9B0003;
+}
+.logo{
+    position: absolute;
+    width: 200px;
+    height: 67px;
+    left: 50%;
+    top: 16px;
+    color: #FFFFFF;
+    text-align: center;
+}
+.user{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: 90%;
+    top: 13px;
+}
