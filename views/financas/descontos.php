@@ -48,13 +48,22 @@
 </div>
 <script>
 	$(document).ready(function(){
-		$('#editar').click(function(){
-			var post = {
-			    metodo: 'definirDesconto', 
-			    parametros: {msg:"vai da certo"}
-			};
-			$.post("control/FinancasControler.php",post,function( data ) {
-		    	alert(data);
+		var post = {
+		    metodo: 'getAlunos', 
+		};
+
+		$.post("control/FinancasControler.php",post,function( data ) {
+			$.each(jQuery.parseJSON(data), function(i, item) {
+				$('tbody').append(
+					'<tr>'+
+						'<td>'+item.id+'</td>'+
+						'<td>'+item.cpf+'</td>'+
+						'<td>'+item.nome+'</td>'+
+						'<td>'+item.nome+'</td>'+
+						'<td>'+item.nome+'</td>'+
+						'<td>'+item.id_turma+'</td>'+
+					'</tr>'
+				);
 			});
 		});
 	});

@@ -1,9 +1,11 @@
 <?php  
+	include '../domain/Contratado.php';
 	class FinancasControler{
 		private static $financasControler = null;
+		private $gerente;
 		private function __construct()
 		{
-					
+			$this->gerente = new Contratado();				
 		}
 
 		public static function getInstance(){
@@ -18,19 +20,21 @@
 		}
 
 		private function getAlunos(){
-			echo json_encode(array('bola' => 'nike'));
+			echo $this->gerente->listarAlunos();
 		}
 
 		public function chamar($metodo,$parametros){
 			if($metodo == 'definirDesconto'){
 				$msg = $parametros['msg'];
 				$this->definirDesconto($msg);
-			}else if(0){}
+			}else if($metodo == 'getAlunos'){
+				$this->getAlunos();
+			}
 		}
 	}
 	$class = "FinancasControler";
 	$funcionario = $class::getInstance();
-	$parametros = $_POST['parametros'];
+	$parametros = isset($_POST['parametros'])?$_POST['parametros']:'';
 	$metodo = $_POST['metodo'];
 	$funcionario->chamar($metodo,$parametros);
 ?>
