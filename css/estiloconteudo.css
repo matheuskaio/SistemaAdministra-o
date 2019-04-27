@@ -1,3 +1,4 @@
+/*Conteúdo geral*/
 #conteudo{
 	position: absolute;
 	width: 65%;
@@ -7,6 +8,7 @@
 	background: rgba(196, 196, 196, 0.3);
 }
 
+/*Conteúdo da página de desconto */
 #filtragem{
 	position: relative;
 	left: 8%;
@@ -21,3 +23,4 @@
 	padding: 0 0;
 	left: 0;
 }
+
