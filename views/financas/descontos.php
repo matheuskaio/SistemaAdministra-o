@@ -40,7 +40,7 @@
 		      <td>(24)96969-6969</td>
 		      <td>Rua Augusta</td>
 		      <td>1v</td>
-		      <td><a href="#" id="editar" lass="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Editar</a></td>
+		      <td><a href="#" id="editar" lass="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Definir desconto</a></td>
 		    </tr>
 		  </tbody>
 		</table>
@@ -65,7 +65,7 @@
 						'<td>'+item.telefone+'</td>'+
 						'<td>'+item.rua+'</td>'+
 						'<td>'+item.id_turma+'</td>'+
-						'<td><a href="#" id="editar" lass="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Editar</a></td>'+
+						'<td><a href="#" id="editar" lass="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Definir desconto</a></td>'+
 					'</tr>'
 				);
 			});

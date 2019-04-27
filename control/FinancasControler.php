@@ -15,8 +15,9 @@
 			return $financasControler;
 		}
 
-		private function definirDesconto($mensagem){
-			echo $mensagem;
+		private function definirDesconto($idMensalidade,$desconto){
+			$this->gerente->definirDesconto($idMensalidade,$desconto);
+			echo 'Desconto registrado com sucesso!';
 		}
 
 		private function listarAlunos(){
@@ -25,8 +26,9 @@
 
 		public function chamar($metodo,$parametros){
 			if($metodo == 'definirDesconto'){
-				$msg = $parametros['msg'];
-				$this->definirDesconto($msg);
+				$idMensalidade = $parametros['id'];
+				$desconto = $parametros['desconto'];
+				$this->definirDesconto($idMensalidade,$desconto);
 			}else if($metodo == 'listarAlunos'){
 				$this->listarAlunos();
 			}

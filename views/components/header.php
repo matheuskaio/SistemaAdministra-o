@@ -10,7 +10,6 @@
 	<link rel="stylesheet" type="text/css" href="css/estilomenu.css">
 	<link rel="stylesheet" type="text/css" href="css/estiloconteudo.css">
 	<link rel="stylesheet" type="text/css" href="css/estiloModal.css">
-	
 
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
 	

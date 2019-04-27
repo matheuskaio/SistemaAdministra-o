@@ -1,7 +1,5 @@
 <?php
 
-#base de dados
-include 'db.php';
 
 #cabeçalho
 include 'views/components/header.php';

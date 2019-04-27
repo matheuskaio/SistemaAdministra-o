@@ -2,7 +2,7 @@
   		<div class="modal-dialog modal-lg" id="modalDeFora">
    			<div class="modal-content" id="modalAlteracoes">
       			<p>DADOS</p>
-      				<img src="imagem.jpg" id="userImg">
+      				<img src="img/user.png" id="userImg">
       				<div id="dadosAluno">
       					<form>
       						<div id="bloco1">
@@ -137,13 +137,28 @@
 											</select>
 								    </div>
 								</div>
-      						</div>
       				</form>
-      			</div>      
+						</div> 
     		</div>
-    			<div id="botoes">
-    				<button type="button" class="btn btn-success">Salvar</button>
+				<div id="botoes">
+					<button type="button" class="btn btn-success">Salvar</button>
 					<button type="button" class="btn btn-danger">Cancelar</button>
-    			</div>
+				</div> 
   		</div>
 	</div>
+	<script>
+	$(document).ready(function(){	
+		$(".btn-success").click(function(){
+			var post = {
+		    metodo: 'definirDesconto', 
+				parametros:{
+					id: 1,
+					desconto : 3
+				}
+			};
+			$.post("control/FinancasControler.php",post,function( data ) {
+				alert(data);
+			});
+		});
+	});
+</script>
