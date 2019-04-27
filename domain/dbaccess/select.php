@@ -2,7 +2,7 @@
 	
 	function selectAlunos(){
 		include 'connection.php';
-		$sql = 'select a.id,a.id_turma,u.nome,u.cpf,faixa from aluno a,usuario u where a.id=u.id';
+		$sql = 'select a.id,a.id_turma,u.nome,u.cpf,u.telefone,faixa,e.rua from aluno a,usuario u,endereco e where a.id=u.id and u.id_endereco = e.id';
 		$result = $conn->query($sql);
 
 		if ($result->num_rows > 0) {

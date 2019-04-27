@@ -49,19 +49,19 @@
 <script>
 	$(document).ready(function(){
 		var post = {
-		    metodo: 'getAlunos', 
+		    metodo: 'listarAlunos', 
 		};
-
 		$.post("control/FinancasControler.php",post,function( data ) {
 			$.each(jQuery.parseJSON(data), function(i, item) {
 				$('tbody').append(
 					'<tr>'+
-						'<td>'+item.id+'</td>'+
+						'<th scope="row">'+item.id+'</th>'+
 						'<td>'+item.cpf+'</td>'+
 						'<td>'+item.nome+'</td>'+
-						'<td>'+item.nome+'</td>'+
-						'<td>'+item.nome+'</td>'+
+						'<td>'+item.telefone+'</td>'+
+						'<td>'+item.rua+'</td>'+
 						'<td>'+item.id_turma+'</td>'+
+						'<td><a href="#" id="editar">Editar</a></td>'+
 					'</tr>'
 				);
 			});

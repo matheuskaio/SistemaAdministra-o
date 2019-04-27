@@ -19,7 +19,7 @@
 			echo $mensagem;
 		}
 
-		private function getAlunos(){
+		private function listarAlunos(){
 			echo $this->gerente->listarAlunos();
 		}
 
@@ -27,8 +27,8 @@
 			if($metodo == 'definirDesconto'){
 				$msg = $parametros['msg'];
 				$this->definirDesconto($msg);
-			}else if($metodo == 'getAlunos'){
-				$this->getAlunos();
+			}else if($metodo == 'listarAlunos'){
+				$this->listarAlunos();
 			}
 		}
 	}
