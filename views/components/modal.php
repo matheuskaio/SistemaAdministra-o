@@ -149,12 +149,16 @@
 	</div>
 	<script>
 	$(document).ready(function(){	
+		$( "#ipdesconto" ).keyup(function() {
+			$('#ipvalordesconto').val($(this).val()/100*$('#ipmensalidade').val());
+			$('#ipnovamensalidade').val($('#ipmensalidade').val()-$('#ipvalordesconto').val());
+		});
 		$(".btn-success").click(function(){
 			var post = {
 		    metodo: 'definirDesconto', 
 				parametros:{
 					id: 1,
-					desconto : 3
+					desconto : $('#ipdesconto').val()
 				}
 			};
 			$.post("control/FinancasControler.php",post,function( data ) {

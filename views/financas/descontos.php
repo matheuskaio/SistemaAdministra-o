@@ -73,11 +73,10 @@
 				var post = {
 					metodo: 'getAluno', 
 					parametros:{
-						id: 2
+						id: $(this).parent().parent().children('th').html()
 					}
 				};
 				$.post("control/FinancasControler.php",post,function( data ) {
-					
 					var aluno = jQuery.parseJSON(data);
 					$('#ipnome').val(aluno.nome);
 					$('#ipendereco').val(aluno.endereco);
@@ -87,8 +86,13 @@
 					$('#ipturma').val(aluno.id_turma);
 					$('#ipmestre').val(aluno.mestre);
 					$('#ipfaixa').val(aluno.faixa);
-					$('#ipaulas').val(aluno);
-					$('#iphorarios').val(aluno);
+					$('#ipaulas').val(aluno.dias);
+					$('#iphorarios').val(aluno.horas_aula);
+					$('#ipmatricula').val(aluno.data_inicio);
+					$('#ipmensalidade').val(aluno.valor);
+					$('#ipvalordesconto').val($('#ipdesconto').val()/100*aluno.valor);
+					$('#ipnovamensalidade').val(aluno.valor-$('#ipdesconto').val());
+					$('#ipdatamensalidade').val(aluno.data);
 				});
 			});
 		});
