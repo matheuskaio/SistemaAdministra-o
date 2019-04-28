@@ -24,6 +24,9 @@
 			echo $this->gerente->listarAlunos();
 		}
 
+		private function getAluno($id){
+			echo selectAlunoById($id);
+		}
 		public function chamar($metodo,$parametros){
 			if($metodo == 'definirDesconto'){
 				$idMensalidade = $parametros['id'];
@@ -31,7 +34,11 @@
 				$this->definirDesconto($idMensalidade,$desconto);
 			}else if($metodo == 'listarAlunos'){
 				$this->listarAlunos();
+			}else if($metodo == 'getAluno'){
+				$idAluno = $parametros['id'];
+				$this->getAluno($idAluno);
 			}
+			
 		}
 	}
 	$class = "FinancasControler";

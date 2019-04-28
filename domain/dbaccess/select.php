@@ -16,4 +16,23 @@
 		}	
 		$conn->close();
 	}
+
+	function selectAlunoById($id){
+		include 'connection.php';
+		$sql = 'select a.id,a.id_turma,a.faixa, 
+				u.nome,u.cpf,u.telefone,u.rg, 
+				concat(e.rua,\', \', e.cidade,\', nº\',  e.numero) endereco,
+				m.mestre 
+				from aluno a,usuario u,endereco e,turma t, 
+				(SELECT us.nome mestre from usuario us,turma t where t.id_mestre = us.id) m 
+				where a.id=u.id and u.id_endereco = e.id and t.id=a.id_turma and a.id='.$id;
+		$result = $conn->query($sql);
+		if ($result->num_rows > 0) {
+		    $aluno = $result->fetch_assoc();
+		    echo json_encode($aluno);
+		} else {
+		    echo "0 results";
+		}	
+		$conn->close();
+	}
 ?>
