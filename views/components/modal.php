@@ -138,18 +138,15 @@
 								    </div>
 								</div>
       				</form>
-							<div id="botoes">
-									<button type="button" class="btn btn-success">Salvar</button>
-									<button type="button" class="btn btn-danger">Cancelar</button>
-						</div> 
-						</div> 						
+					</div> 
+						<div class="modal-footer" id="botoes">
+							<button type="button" id="salvar" class="btn btn-primary">Salvar</button>
+					        <button type="button" id="cancelar" class="btn btn-secondary" data-dismiss="modal">Cancelar</button> 
+					    </div>						
     		</div>
 				
 			</div>
-			<div id="botoes">
-					<button type="button" class="btn btn-success">Salvar</button>
-					<button type="button" class="btn btn-danger">Cancelar</button>
-				</div> 
+
 	</div>
 	<script>
 	$(document).ready(function(){	
@@ -157,7 +154,7 @@
 			$('#ipvalordesconto').val($(this).val()/100*$('#ipmensalidade').val());
 			$('#ipnovamensalidade').val($('#ipmensalidade').val()-$('#ipvalordesconto').val());
 		});
-		$(".btn-success").click(function(){
+		$(".btn-primary").click(function(){
 			var post = {
 		    metodo: 'definirDesconto', 
 				parametros:{

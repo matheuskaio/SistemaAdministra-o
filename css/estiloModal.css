@@ -81,22 +81,27 @@ label{
 }
 #bloco5 div div input{
 	margin-left: 40px;
+	width: 130px;
 }
 #bloco4 div div input{
 	margin-left: 40px;
+	width: 130px;
 }
 #bloco3 div div input{
 	margin-left: 20px;
+	width: 130px;
 }
 #bloco2 div div input{
 	margin-left: 20px;
+	width: 130px;
 }
 #bloco1 div div input{
 	margin-left: -30px;
+
 }
 
 #bloco5 div div select{
-	margin-left: 20px;
+	margin-left: 40px;
 	width: 130px;
 }
 
@@ -158,10 +163,48 @@ form{
 	height: auto;
 	top: -175px;
 	margin-left: 15px;
+
 }
 
 #botoes{
 	position: relative;
-	left:65%;
-	bottom: -12%;
+	left:0%;
+	bottom: 40%;
+}
+
+#salvar{
+	width: 144px;
+	height: 42px;
+	left: 1067px;
+	top: 1064px;
+	background: #05A65B;
+	border-radius: 10px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 900;
+	font-size: 24px;
+	line-height: 28px;
+	color: #FFFFFF;
+}
+
+#cancelar{
+	font-family: Roboto;
+	width: 144px;
+	height: 42px;
+	left: 1067px;
+	top: 1064px;
+	background: #F21905;
+	border-radius: 10px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 900;
+	font-size: 24px;
+	line-height: 28px;
+	color: #FFFFFF;
+}
+
+#ipdesconto{
+	background-color: white;
+	width: 130px;
+	margin-left: 10px;
 }
