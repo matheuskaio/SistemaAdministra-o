@@ -138,12 +138,13 @@
 								    </div>
 								</div>
       				</form>
+							<div id="botoes">
+									<button type="button" class="btn btn-success">Salvar</button>
+									<button type="button" class="btn btn-danger">Cancelar</button>
 						</div> 
+						</div> 						
     		</div>
-				<div id="botoes">
-					<button type="button" class="btn btn-success">Salvar</button>
-					<button type="button" class="btn btn-danger">Cancelar</button>
-				</div> 
+				<!--OS BOTÕES ESTAVAM AQUI-->
   		</div>
 	</div>
 	<script>
