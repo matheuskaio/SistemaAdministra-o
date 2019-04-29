@@ -1,4 +1,13 @@
 .background-add-aluno {
-  background-color: #fff;
+  background-color: grey;
   border-radius: 5px;
+}
+
+#conteudoaluno {
+  position: absolute;
+  width: 65%;
+  height: 880px;
+  left: 25%;
+  top: 120px;
+  background: #fff;
 }
