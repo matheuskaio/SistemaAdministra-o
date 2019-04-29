@@ -14,6 +14,10 @@
 		public function definirDesconto($id,$desconto){
 			update($id,$desconto);
 		}
+
+		public function getAluno($id){
+			return getAluno($id);
+		}
 	}
 	
 ?>

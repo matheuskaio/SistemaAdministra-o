@@ -65,9 +65,35 @@
 						'<td>'+item.telefone+'</td>'+
 						'<td>'+item.rua+'</td>'+
 						'<td>'+item.id_turma+'</td>'+
-						'<td><a href="#" id="editar" lass="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Definir desconto</a></td>'+
+						'<td><a href="#" lass="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Definir desconto</a></td>'+
 					'</tr>'
 				);
+			});
+			$('tbody').on('click', 'a', function() {
+				var post = {
+					metodo: 'getAluno', 
+					parametros:{
+						id: $(this).parent().parent().children('th').html()
+					}
+				};
+				$.post("control/FinancasControler.php",post,function( data ) {
+					var aluno = jQuery.parseJSON(data);
+					$('#ipnome').val(aluno.nome);
+					$('#ipendereco').val(aluno.endereco);
+					$('#ipcpf').val(aluno.cpf);
+					$('#iprg').val(aluno.rg);
+					$('#iptelefone').val(aluno.telefone);
+					$('#ipturma').val(aluno.id_turma);
+					$('#ipmestre').val(aluno.mestre);
+					$('#ipfaixa').val(aluno.faixa);
+					$('#ipaulas').val(aluno.dias);
+					$('#iphorarios').val(aluno.horas_aula);
+					$('#ipmatricula').val(aluno.data_inicio);
+					$('#ipmensalidade').val(aluno.valor);
+					$('#ipvalordesconto').val($('#ipdesconto').val()/100*aluno.valor);
+					$('#ipnovamensalidade').val(aluno.valor-$('#ipdesconto').val());
+					$('#ipdatamensalidade').val(aluno.data);
+				});
 			});
 		});
 	});
