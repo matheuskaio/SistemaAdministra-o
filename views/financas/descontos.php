@@ -77,6 +77,7 @@
 					}
 				};
 				$.post("control/FinancasControler.php",post,function( data ) {
+					
 					var aluno = jQuery.parseJSON(data);
 					$('#ipnome').val(aluno.nome);
 					$('#ipendereco').val(aluno.endereco);
