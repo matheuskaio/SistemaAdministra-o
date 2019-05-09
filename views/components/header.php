@@ -14,7 +14,7 @@
 
 
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
-	
+
 	<meta charset="utf-8">
 	<title>Gerenciamento de Escola de Caratê</title>
 </head>
@@ -23,4 +23,3 @@
 			<a href="?pagina=home"><h3 class="logo">Sistema de Cadastro</h3></a>
 			<img class="user" src="img/user.png">
 	</header>
-	
