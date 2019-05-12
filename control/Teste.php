@@ -6,7 +6,9 @@ $a = new Aluno(
 	$_POST['cpf'],
 	'1',
 	$_POST['rg'],
-	'1','1','1','1','1'
+	'2','2','2','2','2',
+	$_POST['email'],
+	$_POST['senha']
 );
 $c = new CRUD;
 
