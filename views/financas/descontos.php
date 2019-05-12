@@ -8,7 +8,7 @@
 		    </div>
 		    <div class="form-group col-md-4">
 		      <select id="inputEstado" class="form-control">
-		        <option selected="">Turma</option>		  
+		        <option selected="">Turma</option>
 		        <option>Cidade</option>
 		        <option>Código</option>
 		        <option>Telefone</option>
@@ -16,7 +16,7 @@
 		        <option>Data de Nascimento</option>
 		      </select>
 		    </div>
-		  </div> 
+		  </div>
 		</form>
 	</div>
 
@@ -53,7 +53,7 @@
 <script>
 	$(document).ready(function(){
 		var post = {
-		    metodo: 'listarAlunos', 
+		    metodo: 'listarAlunos',
 		};
 		$.post("control/FinancasControler.php",post,function( data ) {
 			$.each(jQuery.parseJSON(data), function(i, item) {
@@ -71,13 +71,13 @@
 			});
 			$('tbody').on('click', 'a', function() {
 				var post = {
-					metodo: 'getAluno', 
+					metodo: 'getAluno',
 					parametros:{
 						id: $(this).parent().parent().children('th').html()
 					}
 				};
 				$.post("control/FinancasControler.php",post,function( data ) {
-					
+
 					var aluno = jQuery.parseJSON(data);
 					$('#ipnome').val(aluno.nome);
 					$('#ipendereco').val(aluno.endereco);
@@ -99,4 +99,3 @@
 		});
 	});
 </script>
-

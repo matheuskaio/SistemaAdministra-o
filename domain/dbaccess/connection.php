@@ -3,7 +3,7 @@
 	$user = 'msdeve73_admin2';
 	$password = '12345';
 	$dbname = 'msdeve73_karate';
-	public $conn = new mysqli($host, $user, $password,$dbname);
+	$conn = new mysqli($host, $user, $password,$dbname);
 	if ($conn->connect_error) {
 	    die("Connection failed: " . $conn->connect_error);
 	}

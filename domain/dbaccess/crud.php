@@ -1,8 +1,8 @@
 <?php
     include 'select.php';
     include 'update.php';
-    public class CRUD{
-      function insert($table,$obj){
+    class CRUD{
+      public function insert($table,$obj){
           $sql = 'insert into '.$table.' (';
           foreach ($obj as $key => $value) {
             $sql .= $key.',';
@@ -14,11 +14,11 @@
           $sql = substr_replace($sql,')', -1);
           echo $sql;
       }
-      function deletar($table,$condiction){
+      public function deletar($table,$condiction){
         echo 'delete from '.$table.' where '.$condiction;
       }
 
-      function update($table,$obj,$condiction){
+      public function update($table,$obj,$condiction){
         $sql = 'update '.$table;
         foreach ($obj as $key => $value) {
           $sql .= 'set '.$key.'='.$value.',';
@@ -27,7 +27,7 @@
         echo $sql.' where '.$condiction;
       }
 
-      function select($fields,$condiction){
+      public function select($fields,$condiction){
         $sql = 'select ';
         foreach ($fields as $key => $value) {
           $sql.=$value.',';
