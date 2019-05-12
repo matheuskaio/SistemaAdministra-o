@@ -1,11 +1,11 @@
-<?php  
+<?php
 	include '../domain/Contratado.php';
 	class FinancasControler{
 		private static $financasControler = null;
 		private $gerente;
 		private function __construct()
 		{
-			$this->gerente = new Contratado();				
+			$this->gerente = new Contratado();
 		}
 
 		public static function getInstance(){
@@ -38,12 +38,13 @@
 				$idAluno = $parametros['id'];
 				$this->getAluno($idAluno);
 			}
-			
+
 		}
 	}
-	$class = "FinancasControler";
-	$funcionario = $class::getInstance();
+
+
+	$funcionario = FinancasControler::getInstance();
 	$parametros = isset($_POST['parametros'])?$_POST['parametros']:'';
-	$metodo = $_POST['metodo'];
+	$metodo = isset($_POST['metodo'])?$_POST['metodo']:'';
 	$funcionario->chamar($metodo,$parametros);
 ?>

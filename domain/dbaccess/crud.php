@@ -1,18 +1,25 @@
 <?php
     include 'select.php';
     include 'update.php';
+    require_once 'connection.php';
     class CRUD{
+      private $conn;
+      public function __construct(){
+        $this->conn = new Connection;
+      }
+
       public function insert($table,$obj){
           $sql = 'insert into '.$table.' (';
-          foreach ($obj as $key => $value) {
+          foreach ($obj->getFieds() as $key => $value) {
             $sql .= $key.',';
           }
           $sql = substr_replace($sql,') values (', -1);
-          foreach ($obj as $value) {
-            $sql .= $value.',';
+          foreach ($obj->getFieds() as $value) {
+            $sql .= '\''.$value.'\',';
           }
           $sql = substr_replace($sql,')', -1);
-          echo $sql;
+          // echo $sql;
+          echo $this->conn->getConnection()->query($sql);
       }
       public function deletar($table,$condiction){
         echo 'delete from '.$table.' where '.$condiction;
@@ -40,4 +47,3 @@
     // select(['id','nome'],'teste where   id = 1');
     // deletar('teste','id = 1');
     // update('teste',array('nome'=>'marcio','livro'=>'book'),'id=1')
-?>

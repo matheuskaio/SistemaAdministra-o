@@ -56,6 +56,7 @@
 		    metodo: 'listarAlunos',
 		};
 		$.post("control/FinancasControler.php",post,function( data ) {
+			console.log(data);
 			$.each(jQuery.parseJSON(data), function(i, item) {
 				$('tbody').append(
 					'<tr>'+

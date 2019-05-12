@@ -10,13 +10,15 @@
 							<div class="col-md-8">
 								<div class="form-group">
 									<label for="" class="nome" >Nome:</label>
-									<input type="name" name="nome" class="form-control" placeholder="Nome"/>
+									<input type="name" name="nome" class="form-control"
+									placeholder="Nome"/>
 								</div>
 							</div>
 							<div class="col-md-4">
 								<div class="form-group">
 									<label for="" class="nome" >Data de Nascimento:</label>
-									<input type="date" name="data_nascimento" class="form-control"/>
+									<input type="date" name="data_nascimento"
+									class="form-control"/>
 								</div>
 							</div>
 						</div>
@@ -25,12 +27,14 @@
 						<div class="form-row">
 							<div class="form-group col-md-4">
 								<label for="" class="nome">CPF:</label>
-								<input type="name" name="cpf" class="form-control" placeholder="CPF"/>
+								<input type="name" name="cpf" class="form-control"
+								placeholder="CPF"/>
 							</div>
 							<div class="form-group col-md-4">
 								<label for="" class="nome">RG:</label>
-								<input type="name" name="rg" class="form-control" placeholder="RG"/>
-							</div>		
+								<input type="name" name="rg" class="form-control"
+								placeholder="RG"/>
+							</div>
 							<div class="form-group col-md-4">
 								<label for="" class="nome">Sexo:</label>
 								<select class="form-control" name="sexo" id="sel1">
@@ -38,9 +42,9 @@
 									<option value="masculino">Masculino</option>
 									<option value="feminino">Feminino</option>
 								</select>
-							</div>		
+							</div>
 						</div>
-					</div>				
+					</div>
 					<div class="col-md-12">
 						<div class="form-row">
 							<div class="form-group col-md-4">
@@ -60,7 +64,9 @@
 								<label>Foto:</label>
 								<div class="custom-file">
 									<input type="file" class="custom-file-input" id="customFile">
-									<label class="custom-file-label" for="customFile">Choose file</label>
+									<label class="custom-file-label" for="customFile">
+										Choose file
+									</label>
 								</div>
 							</div>
 						</div>
@@ -77,8 +83,9 @@
 						<div class="col-md-8">
 							<div class="form-group">
 								<label for="" class="nome">E-mail:</label>
-								<input type="name" name="email" class="form-control" placeholder="E-mail"/>
-							</div>	
+								<input type="name" name="email" class="form-control"
+								placeholder="E-mail"/>
+							</div>
 						</div>
 						<div class="col-md-4">
 						</div>
@@ -89,13 +96,15 @@
 						<div class="col-md-4">
 							<div class="form-group">
 								<label for="" class="nome">Senha:</label>
-								<input type="password" name="senha" class="form-control" placeholder="Senha"/>
-							</div>	
+								<input type="password" name="senha" class="form-control"
+								placeholder="Senha"/>
+							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 								<label for="" class="nome">Confirmar Senha:</label>
-								<input type="password" name="senha1" class="form-control" placeholder="Confirmar Senha"/>
+								<input type="password" name="senha1" class="form-control"
+								placeholder="Confirmar Senha"/>
 							</div>
 						</div>
 						<div class="col-md-4"></div>
@@ -156,7 +165,8 @@
 						<div class="col-md-4">
 							<div class="form-group">
 								<label for="" class="nome">Código:</label>
-								<input type="name" name="codigo" class="form-control" placeholder="Código"/>
+								<input type="name" name="codigo" class="form-control"
+								placeholder="Código"/>
 							</div>
 							<div class="form-group">
 								<label for="" class="nome">Mestre:</label>
@@ -172,8 +182,12 @@
 			</div>
 		</div>
 		<div class="mt-4 mb-4">
-			<button type="submit" class="btn btn-success"><strong>Salvar</strong></button>
-			<button type="submit" class="btn btn-danger"><strong>Cancelar</strong></button>
+			<button type="submit" class="btn btn-success">
+				<strong>Salvar</strong>
+			</button>
+			<button type="submit" class="btn btn-danger">
+				<strong>Cancelar</strong>
+			</button>
 		</div>
 	</form>
 </div>
@@ -183,4 +197,11 @@ $(".custom-file-input").on("change", function() {
   var fileName = $(this).val().split("\\").pop();
   $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
 });
+$('form').submit(function(event){
+	event.preventDefault();
+	$.post('control/Teste.php',$(this).serialize(),function(data){
+		console.log(data);
+	});
+});
+
 </script>
