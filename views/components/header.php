@@ -17,6 +17,13 @@
 </head>
 <body>
 	<header id="cabecalho">
-			<a href="?pagina=home"><h3 class="logo">Sistema de Cadastro</h3></a>
-			<img class="user" src="views/img/user.png">
+			<?php
+				$logged = true;
+				if (!$logged):
+					require_once 'views/components/nave/unlogged.php';
+				else:
+			?>
+				<a href="?pagina=home"><h3 class="logo">Sistema de Cadastro</h3></a>
+				<img class="user" src="views/img/user.png">
+			<?php  endif ?>
 	</header>

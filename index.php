@@ -5,15 +5,20 @@
 include 'views/components/header.php';
 
 #menu
-include 'views/components/nave.php';
-
+if($logged){
+	include 'views/components/nave/logged.php';
+}
 #conteudo da pagina
 
 
 if (isset($_GET['pagina'])) {
 	$pagina = $_GET['pagina'];
 }else{
-	$pagina = 'home';
+	if($logged){
+		$pagina = 'home';
+	}else{
+		$pagina = 'login';
+	}
 }
 
 #Gerenciar Alunos
@@ -38,9 +43,8 @@ elseif ($pagina == 'relatorios') {
 	include 'views/financas/descontos.php';
 }
 
-else{
+elseif ($pagina == 'home'){
 	include 'views/home.php';
+}else{
+	include 'views/login.php';
 }
-
-
-

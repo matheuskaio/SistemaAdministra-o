@@ -1,3 +1,6 @@
+.unlogged{
+  background: blue;
+}
 .menuficadento{
     position: absolute;
     width: 200px;
@@ -54,4 +57,9 @@
   overflow: hidden;
   max-height: 0;
   -webkit-transition: all 0.9s ease-out;
+}
+.unlogged ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
